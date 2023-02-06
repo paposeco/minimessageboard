@@ -2,4 +2,9 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  ul
+    each mes in messages
+      - const simpleDate = mes.added.toString().slice(4,24);
+      li= "(" + simpleDate + ") " + mes.user + ": " + mes.text
+
+  a(href="/new") Send new message

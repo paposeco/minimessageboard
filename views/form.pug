@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title 
+  h2 Send new message
+  form(
+    method="POST"
+    action="/new"
+    )
+    label(for="username") Name
+    input(
+    type="text"
+    name="username"
+    id="username"
+    )
+    label(for="message") Message
+    input(
+    type="text"
+    name="message"
+    id="message"
+    )
+    input(
+    type="submit"
+    value="Send"
+    )
+
+//- both node and express were running on 3000. form post was returning 404 
