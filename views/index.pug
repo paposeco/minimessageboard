@@ -1,10 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  ul
-    each mes in messages
-      - const simpleDate = mes.added.toString().slice(4,24);
-      li= "(" + simpleDate + ") " + mes.user + ": " + mes.text
+  h1(id="pagetitle")= title
+  div(class="textcontent")
+    div(class="filler")
+    ul
+      each mes in messages
+        - const simpleDate = mes.added.toString().slice(4,24);
+        li= "(" + simpleDate + ") " + mes.user + ": " + mes.text
 
-  a(href="/new") Send new message
+    a(id="sendmessagelink" href="/new") Send new message
